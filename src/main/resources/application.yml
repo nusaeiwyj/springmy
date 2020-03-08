@@ -5,3 +5,22 @@ spring:
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
+
+
+family:
+  family-name: "happy family"
+  father:
+    name: 王友健
+    age: 18
+  mother:
+    alias:
+      - lovely
+      - ailice
+  child:
+    name: wyt
+    age: 5
+    friends:
+      - hobby: football
+        sex:  male
+      - hobby: basketball
+        sex: female
