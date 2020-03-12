@@ -71,6 +71,12 @@
             <version>2.1.1</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.github.dozermapper</groupId>
+            <artifactId>dozer-spring-boot-starter</artifactId>
+            <version>6.2.0</version>
+        </dependency>
+
 
     </dependencies>
 
