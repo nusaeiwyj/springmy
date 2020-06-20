@@ -9,6 +9,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpMethod;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
@@ -23,25 +24,25 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 @SpringBootTest
 @ExtendWith(SpringExtension.class)
 @AutoConfigureMockMvc
-public class ArticleRestControllerTest1 {
+public class ArticleVORestControllerTest {
 
     //mock对象
-
+    @Resource
     private MockMvc mockMvc;
 
     //mock对象初始化
-    @BeforeEach
-    public void setUp() {
-        //ArticleRestController aa = new ArticleRestController();
-        mockMvc = MockMvcBuilders.standaloneSetup(new ArticleRestController()).build();
-    }
+//    @BeforeEach
+//    public void setUp() {
+//        //ArticleRestController aa = new ArticleRestController();
+//        mockMvc = MockMvcBuilders.standaloneSetup(new ArticleRestController()).build();
+//    }
 
     //测试方法
     @Test
     public void saveArticle() throws Exception {
 
         String article = "{\n" +
-                "    \"id\": 1,\n" +
+                "    \"id\": 1," +
                 "    \"author\": \"zimug\",\n" +
                 "    \"title\": \"手摸手教你开发spring boot\",\n" +
                 "    \"content\": \"c\",\n" +

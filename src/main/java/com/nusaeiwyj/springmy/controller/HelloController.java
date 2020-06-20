@@ -1,7 +1,7 @@
 package com.nusaeiwyj.springmy.controller;
 
 
-import com.nusaeiwyj.springmy.model.Article;
+import com.nusaeiwyj.springmy.model.ArticleVO;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,7 +12,7 @@ public class HelloController {
     public String Hello()
     {
 
-        Article aa = new Article();
+        ArticleVO aa = new ArticleVO();
         aa.setId(1L);
         return "hello";
     }

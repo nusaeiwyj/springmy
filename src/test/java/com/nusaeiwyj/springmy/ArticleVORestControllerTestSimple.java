@@ -21,7 +21,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 @WebMvcTest
 @ExtendWith(SpringExtension.class)
 @AutoConfigureMockMvc
-public class ArticleRestControllerTestSimple {
+public class ArticleVORestControllerTestSimple {
 
     //mock对象
     @Resource
