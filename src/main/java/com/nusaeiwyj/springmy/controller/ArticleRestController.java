@@ -1,5 +1,7 @@
 package com.nusaeiwyj.springmy.controller;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.nusaeiwyj.springmy.Service.ArticleRestService;
 import com.nusaeiwyj.springmy.generator.Article;
 import com.nusaeiwyj.springmy.model.AjaxResponse;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.Date;
+import java.util.List;
 
 
 @Slf4j
@@ -57,11 +60,24 @@ public class ArticleRestController {
         return AjaxResponse.success(articleRestService.getArticle(Math.toIntExact(id)));
     }
 
-    //获取一篇Article，使用GET方法
+    //获取所有Article，使用GET方法
     //@RequestMapping(value = "/article/{id}", method = GET, produces = "application/json")
     @GetMapping("/article/All")
     public AjaxResponse getAll() {
 
         return AjaxResponse.success(articleRestService.getAll());
+    }
+
+    //获取所有Article，使用GET方法
+    //@RequestMapping(value = "/article/{id}", method = GET, produces = "application/json")
+    @GetMapping("/article/Page")
+    public AjaxResponse getPageData(Integer currentPage, Integer pageSize) {
+
+        currentPage = currentPage == null || currentPage<= 0 ? 1:currentPage;
+        pageSize = pageSize == null || pageSize<= 0 ? 10:pageSize;
+        //执行分页操作
+        PageHelper.startPage(currentPage, pageSize);
+        List<ArticleVO> articles = articleRestService.getAll();
+        return AjaxResponse.success(articles);
     }
 }
